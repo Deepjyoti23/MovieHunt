@@ -6,8 +6,7 @@
   --color-background-100: #fcfefe;
   --color-background-500: #eaf6f6;
   --color-background-900: #66bfbf;
-  --color-red: #fa5252;
-  --color-red-dark: #e03131;
+
 }
 
 * {
@@ -86,6 +85,14 @@ body {
   border-radius: 0.9rem;
   overflow: auto;
   position: relative;
+}
+
+.loader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 4.8rem;
 }
 
 .list {
@@ -175,4 +182,35 @@ body {
   font-size: 1.4rem;
 }
 
+.error {
+  text-align: center;
+  font-size: 2rem;
+  padding: 4.8rem;
+}
 
+@media (max-width: 768px){
+
+  .nav-bar{
+    display: grid;
+    grid-template-columns: auto;
+    height: auto;
+    align-items: center;
+    padding: 0 3.2rem;
+    background-color: var(--color-primary);
+    border-radius: 0.9rem;
+  }
+  .search{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .logo{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    
+    
+  }
+  
+}

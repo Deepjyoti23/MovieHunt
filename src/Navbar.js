@@ -1,5 +1,3 @@
-import Search from "./Search";
-
 function Navbar({ children }) {
   return (
     <nav className="nav-bar">
@@ -7,7 +5,7 @@ function Navbar({ children }) {
         <span role="img">🎬</span>
         <h1>MovieHunt</h1>
       </div>
-      {children}
+      <div>{children}</div>
     </nav>
   );
 }

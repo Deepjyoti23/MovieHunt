@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export function useMovie(query) {
   const [movies, setmovies] = useState([]);
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const KEY = "0ba73c15d9e1c8275d87f98bc601702f";
 
   useEffect(
@@ -20,15 +20,14 @@ export function useMovie(query) {
             throw new Error("Something went wrong with fetching movies");
           const data = await res.json();
           if (data.total_results === 0) throw new Error("Movie not found");
-          
+
           setmovies(data.results);
-           console.log(data);
+          console.log(data);
           setError("");
         } catch (err) {
           console.log(err);
           setError(err.message);
-        }
-        finally {
+        } finally {
           setIsLoading(false);
         }
       }
@@ -41,7 +40,6 @@ export function useMovie(query) {
     },
     [query]
   );
-  
 
-  return { movies,isLoading, error };
+  return { movies, isLoading, error };
 }

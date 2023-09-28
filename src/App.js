@@ -9,14 +9,12 @@ import Loader from "./Loader";
 
 function App() {
   const [query, setQuery] = useState("");
-  const { movies, error,isLoading } = useMovie(query);
+  const { movies, error, isLoading } = useMovie(query);
   const [selectedId, setSelectedId] = useState(null);
 
   function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
-    console.log("click");
   }
-  console.log(error)
 
   return (
     <>
@@ -24,14 +22,14 @@ function App() {
         <Search query={query} setQuery={setQuery} />
       </Navbar>
       <div className="main">
-        <div className={query===""?"":"box"}>
-        {isLoading && <Loader />}
+        <div className={query === "" ? "" : "box"}>
+          {isLoading && <Loader />}
           {!error && (
             <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
           )}
-           {error && <ErrorMessage message={error} />}
+          {error && <ErrorMessage message={error} />}
         </div>
-        <div className={query==="" ?"":"box"}>
+        <div className={query === "" ? "" : "box"}>
           {selectedId ? <MoviesDetails selectedId={selectedId} /> : null}
         </div>
       </div>
